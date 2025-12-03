@@ -60,34 +60,6 @@ data class MenuLayout(
 private fun createMenuLayout(): MenuLayout {
     val firstRowItems = listOf(
         MenuItemConfig(
-            ContextMenuItemType.NewTabForeground,
-            R.string.main_menu_new_tabOpen,
-            Icons.Outlined.Tab
-        ),
-        MenuItemConfig(
-            ContextMenuItemType.NewTabBackground,
-            R.string.main_menu_new_tab,
-            Icons.Outlined.TabUnselected
-        ),
-        MenuItemConfig(
-            ContextMenuItemType.OpenWith,
-            R.string.menu_open_with,
-            Icons.Outlined.Apps
-        ),
-        MenuItemConfig(
-            ContextMenuItemType.SplitScreen,
-            R.string.split_screen,
-            Icons.Outlined.ViewStream
-        ),
-        MenuItemConfig(
-            ContextMenuItemType.ShareLink,
-            R.string.menu_share_link,
-            Icons.Outlined.Share
-        )
-    )
-
-    val secondRowItems = listOf(
-        MenuItemConfig(
             ContextMenuItemType.CopyLink,
             R.string.copy_link,
             Icons.Outlined.CopyAll
@@ -96,31 +68,9 @@ private fun createMenuLayout(): MenuLayout {
             ContextMenuItemType.SelectText,
             R.string.text_select,
             Icons.AutoMirrored.Outlined.Segment
-        ),
-        MenuItemConfig(
-            ContextMenuItemType.TranslateImage,
-            R.string.translate,
-            iconResId = R.drawable.ic_papago,
-            shouldShow = { url, _, shouldShowTranslateImage ->
-                shouldShowTranslateImage && (url.lowercase().contains("jpg") || url.lowercase().contains("png"))
-            }
-        ),
-        MenuItemConfig(
-            ContextMenuItemType.Tts,
-            R.string.menu_tts,
-            Icons.Outlined.RecordVoiceOver
-        ),
-        MenuItemConfig(
-            ContextMenuItemType.SaveAs,
-            R.string.menu_save_as,
-            Icons.Outlined.Save
-        ),
-        MenuItemConfig(
-            ContextMenuItemType.Summarize,
-            R.string.menu_summarize,
-            Icons.AutoMirrored.Outlined.Chat
         )
     )
+    val secondRowItems :  List<MenuItemConfig> = ArrayList()
 
     return MenuLayout(firstRowItems, secondRowItems)
 }

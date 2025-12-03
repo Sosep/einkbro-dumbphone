@@ -97,7 +97,7 @@ fun ComposedToolbar(
             .height(height)
             .background(MaterialTheme.colors.background)
             .semantics { testTagsAsResourceId = true },
-        horizontalAlignment = Alignment.End
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         if (showTabs) {
             Row(
